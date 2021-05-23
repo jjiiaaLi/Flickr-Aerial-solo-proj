@@ -40,7 +40,7 @@ function Navigation({ isLoaded }) {
           type="button"
           disabled={searchContent === ""}
           onClick={handleClick}
-        ><img className='magGlass' src='https://img.favpng.com/23/14/13/symbol-computer-icons-magnifying-glass-google-search-png-favpng-d6Rn8p0UBgkbczpySrA6dBKsx.jpg' /></button>
+        >🔍 </button>
         {isLoaded && sessionLinks}
       </li>
     </ul>

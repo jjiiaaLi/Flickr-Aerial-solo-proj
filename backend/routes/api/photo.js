@@ -5,10 +5,8 @@ const {Photo} = require ('../../db/models');
 
 router.get('/', asyncHandler(async(req,res)=>{
     const photos = await Photo.findAll();
-    setTimeout(()=>{
-        res.json(photos);
-    },5000)
-
+    
+    res.json(photos);
 }))
 
 router.get('/:id',asyncHandler(async(req,res)=>{
