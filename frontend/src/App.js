@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import PhotoContainer from './components/PhotoContainer';
 import PhotoDisplay from './components/PhotoDisplay';
+import MainPage from './components/MainPage'
 
 function App() {
   const dispatch = useDispatch();
@@ -14,7 +15,8 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
-
+  const user = useSelector(state=>Object.values(state.session))
+  console.log(user)
   return (
     <>
       <Navigation isLoaded={isLoaded} />
@@ -22,7 +24,8 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-            <PhotoContainer />
+            {user[0] && <PhotoContainer />}
+            {!user[0] && <MainPage />}
           </Route>
           <Route path="/login">
             <LoginFormPage />

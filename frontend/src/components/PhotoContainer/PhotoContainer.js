@@ -14,7 +14,6 @@ const PhotoContainer = () =>{
 
     return (
       <div className="photoContainer">
-        <h2>photos are loading</h2>
         {photos.map((image) => (
           <Link key={image} to={`/photo/${image.id}`}>
             <img className="image" src={image.source} />
@@ -22,7 +21,6 @@ const PhotoContainer = () =>{
         ))}
       </div>
     );
-
-}
+};
 
 export default PhotoContainer;

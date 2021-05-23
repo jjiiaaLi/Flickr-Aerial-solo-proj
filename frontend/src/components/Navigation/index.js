@@ -27,7 +27,7 @@ function Navigation({ isLoaded }) {
     <ul>
       <li>
         <NavLink exact to="/">
-          Home &nbsp;
+          Flickr Clone &nbsp;
         </NavLink>
         <input
           type="text"
