@@ -34,17 +34,17 @@ export const getPhotos = () => async dispatch =>{
 const initialState = {};
 
 export default function photoReducer(state=initialState, action){
-    
+    let newState={}
     switch(action.type){
         case LOAD: {
-            const newState={};
+            newState={};
             action.photos.forEach(photo=>{
                 newState[photo.id]=photo
             })
             return newState;
         };
         case GET_ONE:
-            const newState={}
+            newState={}
             newState[action.photo.id]=action.photo
             return newState;
         default:

@@ -13,7 +13,7 @@ export default function PhotoDisplay() {
     const photo = useSelector((state) => Object.values(state.photo));
     
     return (
-      <div>
+      <div className='container'>
         <img className="selectedPhoto" src={photo[(id-1)].source} />
       </div>
     );
