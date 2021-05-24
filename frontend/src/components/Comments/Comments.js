@@ -22,7 +22,7 @@ export default function Comments() {
       newComment,userId,id
     }
     let submitCommentSuccess = await dispatch(submitComment(data));
-    
+    setNewComment('')
   }
   return (
     <div className="commentBox">

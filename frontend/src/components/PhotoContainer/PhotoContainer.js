@@ -19,6 +19,7 @@ const PhotoContainer = () =>{
             <img className="image" src={image.source} />
           </Link>
         ))}
+        <Link to='/photo/add' ><button>add photo</button></Link>
       </div>
     );
 };

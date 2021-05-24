@@ -1,4 +1,7 @@
+
 .shell{
+    height: 783px;
+    width:1639px;
     
 }
 .mainSplash {
@@ -12,6 +15,7 @@
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
+    
 }
 
 .text{
@@ -19,4 +23,6 @@
     z-index: 3;
     color:honeydew;
     font-family: Arial, sans-serif;
+    
 }
+
