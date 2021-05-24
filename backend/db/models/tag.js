@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   Tag.associate = function(models) {
-    // associations can be defined here
+    Tag.hasMany(models.Photo,{foreignKey:'tagId'});
+    
   };
   return Tag;
 };

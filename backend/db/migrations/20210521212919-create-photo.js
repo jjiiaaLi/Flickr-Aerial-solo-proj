@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model:'Tags'}
       },
+      caption:{
+        type:Sequelize.STRING(50),
+        allowNull:false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
