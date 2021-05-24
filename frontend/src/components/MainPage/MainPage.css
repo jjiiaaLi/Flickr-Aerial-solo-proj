@@ -1,4 +1,22 @@
-.photo {
-    max-width: 1000px;
-    max-height: 650px;
+.shell{
+    
+}
+.mainSplash {
+    width: 100%;
+    height: 100%;
+    background-color:black;
+    z-index: 1;
+    position: absolute;
+    background-image: url("https://store-guides2.djicdn.com/guides/wp-content/uploads/2019/06/2ec0e31f-4079-4dbb-933c-c2241225d85e-1-1.jpg");
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+.text{
+   
+    z-index: 3;
+    color:honeydew;
+    font-family: Arial, sans-serif;
 }

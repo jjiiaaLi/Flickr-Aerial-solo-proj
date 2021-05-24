@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import PhotoContainer from './components/PhotoContainer';
 import PhotoDisplay from './components/PhotoDisplay';
 import MainPage from './components/MainPage'
+import Comments from './components/Comments'
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
   const user = useSelector(state=>Object.values(state.session))
-  console.log(user)
+  
   return (
     <>
       <Navigation isLoaded={isLoaded} />
@@ -35,6 +36,7 @@ function App() {
           </Route>
           <Route path="/photo/:id">
             <PhotoDisplay />
+            <Comments />
           </Route>
         </Switch>
       )}

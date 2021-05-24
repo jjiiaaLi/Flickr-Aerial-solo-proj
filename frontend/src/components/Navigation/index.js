@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import styles from "./Navigation.css";
@@ -14,8 +14,12 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/login">Log In &nbsp;</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
+        <Link className="links" to="/login">
+          Log In &nbsp;
+        </Link>
+        <Link className="links" to="/signup">
+          Sign Up
+        </Link>
       </>
     );
   }
@@ -24,23 +28,30 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">
+    <ul className="navBar">
+      <li className="navContainer">
+        <Link className="links" exact to="/">
           Flickr Clone &nbsp;
-        </NavLink>
-        <input
-          type="text"
-          name="searchContent"
-          placeholder="Search Keyword..."
-          value={searchContent}
-          onChange={(e) => setSearchContent(e.target.value)}
-        />
-        <button
-          type="button"
-          disabled={searchContent === ""}
-          onClick={handleClick}
-        >🔍 </button>
+        </Link>
+        <span className='search'>
+          <input
+            type="text"
+            name="searchContent"
+            className="searchInput"
+            placeholder="Search Keyword..."
+            value={searchContent}
+            onChange={(e) => setSearchContent(e.target.value)}
+          />
+          <button
+            type="button"
+            className='searchSubmit'
+            disabled={searchContent === ""}
+            onClick={handleClick}
+          >
+            🔍{" "}
+          </button>
+        </span>
+
         {isLoaded && sessionLinks}
       </li>
     </ul>
