@@ -10,6 +10,7 @@ import PhotoDisplay from './components/PhotoDisplay';
 import MainPage from './components/MainPage';
 import Comments from './components/Comments';
 import AddPhoto from './components/AddPhoto';
+import SearchResult from './components/SearchResult';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,18 +30,21 @@ function App() {
             {user[0] && <PhotoContainer />}
             {!user[0] && <MainPage />}
           </Route>
+          <Route exact path="/searchResult">
+            <SearchResult />
+          </Route>
           <Route path="/login">
             <LoginFormPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route exact path='/photo/add'>
-            <AddPhoto />
-          </Route>
           <Route path="/photo/:id">
             <PhotoDisplay />
             <Comments />
+          </Route>
+          <Route exact path="/photo/add">
+            <AddPhoto />
           </Route>
         </Switch>
       )}

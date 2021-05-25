@@ -2,7 +2,8 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
 const {Photo} = require ('../../db/models');
-
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op
 
 router.get('/', asyncHandler(async(req,res)=>{
     const photos = await Photo.findAll();
@@ -30,6 +31,19 @@ router.post('/',asyncHandler(async(req,res)=>{
     });
     res.json(newPhoto)
     
+}))
+
+router.get('/search/:searchContent', asyncHandler(async(req,res)=>{
+    const searchContent = req.params.searchContent;
+    console.log(searchContent)
+    const photos=await Photo.findAll({
+        where:{
+            caption:{
+                [Op.substring]:searchContent
+            }
+        }
+    })
+    res.json(photos)
 }))
 
 module.exports = router;

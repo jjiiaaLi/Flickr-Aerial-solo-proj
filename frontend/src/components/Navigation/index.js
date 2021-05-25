@@ -1,12 +1,16 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
 import ProfileButton from "./ProfileButton";
 import styles from "./Navigation.css";
+import {searchPhoto} from '../../store/photos';
+import { useHistory } from "react-router-dom";
 
 function Navigation({ isLoaded }) {
   const [searchContent, setSearchContent] = useState("");
   const sessionUser = useSelector((state) => state.session.user);
+  const dispatch=useDispatch();
+  const history = useHistory();
 
   let sessionLinks;
   if (sessionUser) {
@@ -23,8 +27,10 @@ function Navigation({ isLoaded }) {
       </>
     );
   }
-  const handleClick=()=>{
-    return null;
+  const handleClick=async(e)=>{
+    e.preventDefault();
+    await dispatch(searchPhoto(searchContent))
+    history.push('/searchResult')
   }
 
   return (
