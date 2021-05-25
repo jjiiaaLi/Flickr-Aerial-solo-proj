@@ -3,6 +3,7 @@ import sessionReducer from './session';
 import photoReducer from './photos';
 import commentReducer from './comment';
 import usersReducer from './users';
+import tagReducer from './tag';
 import thunk from "redux-thunk";
 
 
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   photo:photoReducer,
   comment:commentReducer,
   users:usersReducer,
+  tags:tagReducer,
 });
 
 let enhancer;

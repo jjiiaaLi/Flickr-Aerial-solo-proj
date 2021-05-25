@@ -2,6 +2,7 @@
 
 const LOAD= 'photo/LOAD';
 const GET_ONE='photo/LOAD_ONE';
+const ADD='photo/ADD';
 
 const load = photos =>({
     type:LOAD,
@@ -12,6 +13,12 @@ const getOne = photo =>({
     type:GET_ONE,
     photo:photo
 })
+
+const add= link =>({
+    type:ADD,
+    link:link,
+})
+
 
 export const getSinglePhoto = (id) => async dispatch =>{
     const res= await fetch(`/api/photo/${id}`);
@@ -31,6 +38,19 @@ export const getPhotos = () => async dispatch =>{
     }
 };
 
+export const addPhoto=(link)=> async dispatch =>{
+    const res=await fetch('/api/photo',{
+        method:'post',
+        headers:{
+            'Content-Type':'application/json',
+        },
+        body:JSON.stringify(link)
+    })
+    if(res.ok){
+        
+    }
+}
+
 const initialState = {};
 
 export default function photoReducer(state=initialState, action){
@@ -47,6 +67,7 @@ export default function photoReducer(state=initialState, action){
             newState={}
             newState[action.photo.id]=action.photo
             return newState;
+        
         default:
             return state
     }
