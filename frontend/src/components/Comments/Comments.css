@@ -17,7 +17,7 @@
     max-width: 80px;
     max-height: 30px;
     background-color: rgb(159, 186, 235);
-    
+    cursor: pointer;
 }
 
 .commentBox {

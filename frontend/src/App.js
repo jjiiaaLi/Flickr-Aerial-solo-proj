@@ -30,7 +30,7 @@ function App() {
             {user[0] && <PhotoContainer />}
             {!user[0] && <MainPage />}
           </Route>
-          <Route exact path="/searchResult">
+          <Route  path="/searchResult">
             <SearchResult />
           </Route>
           <Route path="/login">
@@ -43,7 +43,7 @@ function App() {
             <PhotoDisplay />
             <Comments />
           </Route>
-          <Route exact path="/photo/add">
+          <Route  path="/add">
             <AddPhoto />
           </Route>
         </Switch>
