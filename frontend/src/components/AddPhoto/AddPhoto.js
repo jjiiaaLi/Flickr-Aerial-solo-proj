@@ -8,6 +8,7 @@ import styles from './AddPhoto.css';
 
 
 
+
 export default function AddPhoto(){
     const [source, setSource]= useState('');
     const [tagId, setTagId]= useState(0);
@@ -16,7 +17,9 @@ export default function AddPhoto(){
     const history=useHistory();
     const userId = useSelector((state) => state.session.user.id);
     const tags=useSelector(state=>Object.values(state.tags));
-    
+
+
+
 
     useEffect(()=>{
       dispatch(getTags())
@@ -29,15 +32,15 @@ export default function AddPhoto(){
         const data={
           source,userId,tagId,caption,
         }
-        console.log(data)
+        
         const addPhotoSucsess = await dispatch(addPhoto(data));
         //if addPhotoSuccess.....else show error
-        // history.replace('/')
+        history.replace('/')
     }
     return (
       <div className="main">
         <h2>Add A Photo</h2>
-        <form className="addPhotoForm" onSubmit={onSubmit}>
+        <div className="addPhotoDiv" >
           <label>Add Photo Link</label>
           <input
             type="text"
@@ -53,8 +56,8 @@ export default function AddPhoto(){
           </select>
           <label>Caption</label>
           <input value={caption} onChange={e=>setCaption(e.target.value)} placeholder='Caption...' />
-          <button type="submit">Add</button>
-        </form>
+          <button onClick={onSubmit}>Add</button>
+        </div>
       </div>
     );
 }

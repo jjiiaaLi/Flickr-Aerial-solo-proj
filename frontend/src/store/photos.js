@@ -16,7 +16,7 @@ const getOne = (photo) => ({
 
 const add = (photo) => ({
   type: ADD,
-  link: photo,
+  photo: photo,
 });
 
 export const getSinglePhoto = (id) => async (dispatch) => {
@@ -39,7 +39,7 @@ export const getPhotos = () => async (dispatch) => {
 
 export const addPhoto = (data) => async (dispatch) => {
   
-  const res = await fetch("/api/photo", {
+  const res = await csrfFetch("/api/photo", {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -49,6 +49,7 @@ export const addPhoto = (data) => async (dispatch) => {
   
   if (res.ok) {
     const photo = res.json();
+    console.log(photo)
     dispatch(add(photo));
   }
 };
