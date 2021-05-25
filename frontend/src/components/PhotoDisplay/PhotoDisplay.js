@@ -6,15 +6,20 @@ import styles from "./PhotoDisplay.css";
 
 export default function PhotoDisplay() {
     const {id} = useParams();
-    
     const dispatch = useDispatch();
+    const photos = useSelector((state) => Object.values(state.photo));
+    const displayPhotoUrl= photos[0]
+      
 
+    
+    useEffect(()=>{
+      dispatch(getSinglePhoto(id))
+    },[dispatch])
 
-    const photo = useSelector((state) => Object.values(state.photo));
     
     return (
       <div className='container'>
-        <img className="selectedPhoto" src={photo[(id-1)].source} />
+        <img className="selectedPhoto" src={displayPhotoUrl.source} />
       </div>
     );
 };

@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const LOAD = "photo/LOAD";
 const GET_ONE = "photo/LOAD_ONE";
 const ADD = "photo/ADD";
+const SEARCH = 'photo/SEARCH';
 
 const load = (photos) => ({
   type: LOAD,
@@ -18,6 +19,11 @@ const add = (photo) => ({
   type: ADD,
   photo: photo,
 });
+
+const searchResult = (photos)=>({
+  type:SEARCH,
+  photos:photos,
+})
 
 export const getSinglePhoto = (id) => async (dispatch) => {
   const res = await fetch(`/api/photo/${id}`);
@@ -49,10 +55,19 @@ export const addPhoto = (data) => async (dispatch) => {
   
   if (res.ok) {
     const photo = res.json();
-    console.log(photo)
+    
     dispatch(add(photo));
   }
 };
+
+export const searchPhoto =(searchContent)=>async dispatch=>{
+  const res = await fetch(`/api/photo/search/${searchContent}`)
+  if(res.ok){
+    const photos=await res.json()
+    console.log(photos)
+    dispatch(searchResult(photos))
+  }
+}
 
 const initialState = {};
 
@@ -73,6 +88,12 @@ export default function photoReducer(state = initialState, action) {
     case ADD:
       newState = { ...state };
       newState[action.photo.id] = action.photo;
+      return newState;
+    case SEARCH:
+      newState={};
+      action.photos.forEach((photo) => {
+        newState[photo.id] = photo;
+      });
       return newState;
     default:
       return state;
