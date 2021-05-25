@@ -7,8 +7,9 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import PhotoContainer from './components/PhotoContainer';
 import PhotoDisplay from './components/PhotoDisplay';
-import MainPage from './components/MainPage'
-import Comments from './components/Comments'
+import MainPage from './components/MainPage';
+import Comments from './components/Comments';
+import AddPhoto from './components/AddPhoto';
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path='/photo/add'>
+            <AddPhoto />
           </Route>
           <Route path="/photo/:id">
             <PhotoDisplay />

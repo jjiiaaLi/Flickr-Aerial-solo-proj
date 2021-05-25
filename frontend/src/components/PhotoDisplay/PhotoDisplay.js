@@ -17,4 +17,4 @@ export default function PhotoDisplay() {
         <img className="selectedPhoto" src={photo[(id-1)].source} />
       </div>
     );
-}
+};
