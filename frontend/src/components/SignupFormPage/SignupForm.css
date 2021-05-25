@@ -1,0 +1,35 @@
+
+.signUpBox {
+    height: 900px;
+    width:1920px;
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    z-index: 1;
+    background-image: url(https://wallpaperaccess.com/full/419706.jpg);
+    background-size: 100%;
+}
+
+.signUpForm {
+    font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border-color: black;
+    max-width: 300px;
+    max-height: 330px;
+    position:relative;
+    z-index: 2;
+    border-width: 250px;
+    margin-top: 170px;
+    padding-bottom: 45px;
+    background-color: rgb(238, 238, 238);
+}
+.signUpBtn {
+    width:80px;
+    cursor:pointer;
+}
+.signUpFormEle {
+    width:250px;
+}

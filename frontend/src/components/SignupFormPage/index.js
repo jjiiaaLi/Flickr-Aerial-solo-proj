@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import "./SignupForm.css";
+import styles from "./SignupForm.css";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -32,51 +32,51 @@ function SignupFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Sign Up For Flickr Clone</h2>
-      <ul>
-        {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
-        ))}
-      </ul>
-      <label>
-        Email
+    <div className="signUpBox">
+      <form className="signUpForm" onSubmit={handleSubmit}>
+        <h2 className="signUpFormEle">Sign Up For Flickr Clone</h2>
+        <ul>
+          {errors.map((error, idx) => (
+            <li key={idx}>{error}</li>
+          ))}
+        </ul>
+        <label className="signUpFormLabel">Email</label>
         <input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className="signUpFormEle"
         />
-      </label>
-      <label>
-        Username
+        <label className="signUpFormLabel">Username</label>
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
+          className="signUpFormEle"
         />
-      </label>
-      <label>
-        Password
+        <label className="signUpFormLabel">Password</label>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className="signUpFormEle"
         />
-      </label>
-      <label>
-        Confirm Password
+        <label className="signUpFormLabel">Confirm Password</label>
         <input
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
+          className="signUpFormEle"
         />
-      </label>
-      <button type="submit">Sign Up</button>
-    </form>
+        <button className="signUpBtn" type="submit">
+          Sign Up
+        </button>
+      </form>
+    </div>
   );
 }
 

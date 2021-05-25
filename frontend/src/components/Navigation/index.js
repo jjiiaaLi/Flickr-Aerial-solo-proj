@@ -53,9 +53,7 @@ function Navigation({ isLoaded }) {
             className='searchSubmit'
             disabled={searchContent === ""}
             onClick={handleClick}
-          >
-            🔍{" "}
-          </button>
+          ><i class="fa fa-search"/></button>
         </span>
 
         {isLoaded && sessionLinks}
