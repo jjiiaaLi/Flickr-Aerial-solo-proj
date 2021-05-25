@@ -1,0 +1,40 @@
+
+.formBox{
+    height: 783px;
+    width:1639px;
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    z-index: 1;
+    background-image: url(https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YWVyaWFsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80);
+    background-size: 100%;
+}
+
+.loginForm {
+    font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+    border-radius: 10px;
+    border-color: black;
+    max-width: 200px;
+    max-height: 200px;
+    position:relative;
+    z-index: 2;
+    border-width: 250px;
+    margin-top: 170px;
+    padding-bottom: 45px;
+    background-color: rgb(238, 238, 238);
+}
+
+.subBtn {
+    width:100px;
+    cursor: pointer;
+    margin-bottom:10px;
+    margin-left: 48px;
+}
+
+.formEle {
+    margin-bottom:10px;
+    margin-left: 12px;
+}
