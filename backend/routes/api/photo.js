@@ -17,11 +17,16 @@ router.get('/:id',asyncHandler(async(req,res)=>{
 }))
 
 router.post('/',asyncHandler(async(req,res)=>{
-    const link=req.body.link;
-    console.log(link)
+    const { source, userId, tagId, caption } = req.body.data;
+    console.log('hello');
+    tagId++;
     await Photo.create({
-        
-    })
+      source,
+      userId,
+      tagId,
+      caption,
+    });
+    res.redirect('/')
 }))
 
 module.exports = router;

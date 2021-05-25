@@ -6,7 +6,7 @@ const { Tag } = require("../../db/models");
 
 router.get('/',asyncHandler(async(req,res)=>{
     const tags= await Tag.findAll();
-    console.log(tags)
+    
     res.json(tags)
 }));
 
