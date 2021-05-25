@@ -17,11 +17,11 @@
     max-width: 80px;
     max-height: 30px;
     background-color: rgb(159, 186, 235);
-    
+    cursor: pointer;
 }
 
 .commentBox {
-    margin-left: 220px;
+    margin-left: 640px;
     margin-top: 50px;
 }
 

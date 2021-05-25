@@ -39,9 +39,8 @@ export default function AddPhoto(){
     }
     return (
       <div className="main">
-        <h2>Add A Photo</h2>
-        <div className="addPhotoDiv" >
-          <label>Add Photo Link</label>
+        <div className="addPhotoDiv">
+          <h2 className="addPhotoTitle">Add A Photo</h2>
           <input
             type="text"
             placeholder="photo link..."
@@ -50,13 +49,17 @@ export default function AddPhoto(){
           />
           <label>Select A Tag</label>
           <select value={tagId} onChange={(e) => setTagId(e.target.value)}>
-            {tags.map(tag=>(
+            {tags.map((tag) => (
               <option value={tag.id}>{tag.name}</option>
             ))}
           </select>
           <label>Caption</label>
-          <input value={caption} onChange={e=>setCaption(e.target.value)} placeholder='Caption...' />
-          <button onClick={onSubmit}>Add</button>
+          <input
+            value={caption}
+            onChange={(e) => setCaption(e.target.value)}
+            placeholder="Caption..."
+          />
+          <button className='addBtn' onClick={onSubmit}>Add</button>
         </div>
       </div>
     );

@@ -1,11 +1,42 @@
 .photoContainer {
-    display:flex;
-    flex-wrap: wrap;
-    
+    width:1945px;
+    height:900px;
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    background-color: rgb(220, 220, 220);
 }
 
 .image  {
     max-width: 300px;
     max-height: 200px;
     margin:20px;
+}
+.photoBucket {
+    background-color: white;
+    border:4px;
+    border-radius: 8px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width:900px;
+    height:700px;
+    align-items: center;
+    margin-top: 20px;
+    margin-left:550px;
+    padding:0;
+    overflow: scroll;
+    position: relative;
+    border-style: solid;
+    border-width: thin;
+}
+
+.uploadImage {
+    width:40px;
+    height: 40px;
+    padding:0;
+    border:0;
+    margin-left: 972px;
+    margin-top: 20px;
+    padding-top: 10px;
 }

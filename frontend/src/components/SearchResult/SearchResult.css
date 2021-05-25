@@ -1,0 +1,28 @@
+.photoBox {
+    border:4px;
+    border-radius: 8px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width:900px;
+    height:700px;
+    align-items: center;
+    margin-top: 50px;
+    margin-left:550px;
+    padding:0;
+    overflow: scroll;
+    position: relative;
+    border-style: solid;
+    border-width: thin;
+    background-color: white;
+    position: relative;
+}
+
+.resultOuter {
+    width:1945px;
+    height:800px;
+    background-color: rgb(198, 198, 198);
+    margin-top: 0;
+    padding-top:0;
+    position:absolute;
+}

@@ -5,6 +5,8 @@ import ProfileButton from "./ProfileButton";
 import styles from "./Navigation.css";
 import {searchPhoto} from '../../store/photos';
 import { useHistory } from "react-router-dom";
+import search from './image/search.png';
+
 
 function Navigation({ isLoaded }) {
   const [searchContent, setSearchContent] = useState("");
@@ -53,9 +55,7 @@ function Navigation({ isLoaded }) {
             className='searchSubmit'
             disabled={searchContent === ""}
             onClick={handleClick}
-          >
-            🔍{" "}
-          </button>
+          ><img className='magGlass' src={`${search}`} /></button>
         </span>
 
         {isLoaded && sessionLinks}

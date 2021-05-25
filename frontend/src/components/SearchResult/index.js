@@ -11,12 +11,14 @@ const SearchResult = () => {
   
 
   return (
-    <div className="photoContainer">
-      {photos.map((image) => (
-        <Link key={image} to={`/photo/${image.id}`}>
-          <img className="image" src={image.source} />
-        </Link>
-      ))}
+    <div className='resultOuter'>
+      <div className="photoBox">
+        {photos.map((image) => (
+          <Link key={image} to={`/photo/${image.id}`}>
+            <img className="image" src={image.source} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
