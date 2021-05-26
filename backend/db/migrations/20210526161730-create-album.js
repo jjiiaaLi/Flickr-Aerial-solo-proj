@@ -17,9 +17,8 @@ module.exports = {
         referenses:{model:'Users'},
         allowNull:false,
       },
-      photoId: {
-        type: Sequelize.INTEGER,
-        referenses:{model:'Photos'},
+      photos: {
+        type: Sequelize.STRING(255),
         allowNull:false,
       },
       createdAt: {
