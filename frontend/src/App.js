@@ -12,6 +12,7 @@ import Comments from './components/Comments';
 import AddPhoto from './components/AddPhoto';
 import SearchResult from './components/SearchResult';
 import CreateAlbum from './components/CreateAlbum';
+import ViewAlbums from './components/ViewAlbums';
 
 function App() {
   const dispatch = useDispatch();
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route path='/createAlbum'>
             <CreateAlbum/>
+          </Route>
+          <Route path='/viewAlbums'>
+            <ViewAlbums />
           </Route>
           <Route>
             <h1>404 huh?!</h1>

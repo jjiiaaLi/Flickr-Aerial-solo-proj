@@ -5,35 +5,45 @@
     height:800px;
 }
 
-
-
-
-
 .photoSelectionDiv {
     width: 140px;
     height: 90px;
     padding:10px;
 }
 
-
-
 .imageSelectBox {
     background-color: white;
     border-style: solid;
     border-radius: 8px;
     border-width: thin;
-    width: 1000px;
-    height:200px;
+    width: 700px;
+    height:450px;
     position:relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     overflow: auto;
-    margin-left: 500px;
-    margin-top: 500px;
+    margin-left:600px;
+    margin-top: 20px;
 }
 
 .eachPhoto {
     max-width: 100px;
     max-height: 70px;
+}
+
+.nameInput {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:22px;
+    margin-left:830px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.addAlbumBtn {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:22px;
+    margin-top: 40px;
+    margin-left: 885px;
 }

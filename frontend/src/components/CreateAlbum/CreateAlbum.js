@@ -36,7 +36,7 @@ export default function CreateAlbum() {
   return (
     <div className="createAlbumContainer">
       <form className="albumCreationForm">
-        <input  value={name} onChange={e=>setName(e.target.value)} placeholder="Album name..." />
+        <input className='nameInput' value={name} onChange={e=>setName(e.target.value)} placeholder="Album name..." />
         <div className="imageSelectBox">
           {photos.map((photo) => (
             <div className="photoSelectionDiv">
@@ -52,7 +52,7 @@ export default function CreateAlbum() {
             </div>
           ))}
         </div>
-        <button onClick={addAlbum}>Create Album</button>
+        <button className='addAlbumBtn' onClick={addAlbum}>Create Album</button>
       </form>
     </div>
   );

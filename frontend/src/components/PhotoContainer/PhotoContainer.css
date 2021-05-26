@@ -40,3 +40,35 @@
     margin-top: 20px;
     padding-top: 10px;
 }
+
+.createAlbumBtn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:29px;
+    font-weight:lighter;
+    position:relative;
+    margin-left: -450px;
+    margin-top: 30px;
+    border-radius: 7px;
+    border-style:solid;
+    border-width:thin;
+    cursor: pointer;
+}
+
+.viewAlbumBtn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:29px;
+    font-weight:lighter;
+    position:relative;
+    margin-left: 248px;
+    margin-top: 30px;
+    border-radius: 7px;
+    border-style:solid;
+    border-width:thin;
+    cursor: pointer;
+}
+
+.linkDiv {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
