@@ -1,0 +1,39 @@
+.createAlbumContainer{
+    background-color: rgb(230, 229, 229);
+    position: absolute;
+    width:1945px;
+    height:800px;
+}
+
+
+
+
+
+.photoSelectionDiv {
+    width: 140px;
+    height: 90px;
+    padding:10px;
+}
+
+
+
+.imageSelectBox {
+    background-color: white;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: thin;
+    width: 1000px;
+    height:200px;
+    position:relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow: scroll;
+    margin-left: 500px;
+    margin-top: 500px;
+}
+
+.eachPhoto {
+    max-width: 100px;
+    max-height: 70px;
+}

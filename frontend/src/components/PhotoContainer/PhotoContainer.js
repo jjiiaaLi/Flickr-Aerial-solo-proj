@@ -19,6 +19,9 @@ const PhotoContainer = () =>{
         <Link to="/add">
           <img className="uploadImage" src={`${upload}`} />
         </Link>
+        <Link to='/createAlbum' >
+          Create Album
+        </Link>
         <div className="photoBucket">
           {photos.map((image) => (
             <Link key={image} to={`/photo/${image.id}`}>
