@@ -22,7 +22,7 @@ router.post('/',asyncHandler(async(req,res)=>{
     
     let { source, userId, tagId, caption } = req.body;
     
-    tagId++;
+    
     const newPhoto=await Photo.create({
       source,
       userId,

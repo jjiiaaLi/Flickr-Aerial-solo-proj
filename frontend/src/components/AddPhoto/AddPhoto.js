@@ -11,7 +11,7 @@ import styles from './AddPhoto.css';
 
 export default function AddPhoto(){
     const [source, setSource]= useState('');
-    const [tagId, setTagId]= useState(0);
+    const [tagId, setTagId]= useState(1);
     const [caption, setCaption] = useState('');
     const dispatch=useDispatch();
     const history=useHistory();
@@ -25,6 +25,9 @@ export default function AddPhoto(){
       dispatch(getTags())
     },[dispatch])
     
+    useEffect(()=>{
+      console.log(tagId)
+    },[tagId])
 
     const onSubmit=async(e)=>{
         e.preventDefault();
