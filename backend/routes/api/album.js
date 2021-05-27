@@ -19,7 +19,13 @@ router.post('/', asyncHandler(async(req,res)=>{
     res.json(newAlbum);
 }))
 
-
+router.delete('/:albumId',asyncHandler(async(req,res)=>{
+    const albumId =await req.params.albumId;
+    await Album.destroy({
+        where:{id:albumId}
+    })
+    res.json(albumId)
+}))
 
 
 module.exports = router;

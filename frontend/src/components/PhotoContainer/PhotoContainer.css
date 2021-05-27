@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     position:absolute;
-    background-image: url(https://media.cntraveller.in/wp-content/uploads/2017/10/Aerial-drone-photo-1366x768.jpg);
+    background-image: url(https://ipt.imgix.net/198561/x/0/icelandicpaintings-albertdros-12.jpg?w=860&h=480&fit=crop&dpr=2&auto=format%2C%20compress&ixlib=react-8.6.4);
     background-size: 100%;
     background-repeat: no-repeat;
 }

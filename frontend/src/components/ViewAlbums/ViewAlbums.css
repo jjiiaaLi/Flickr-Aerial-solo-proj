@@ -59,3 +59,15 @@
     flex-wrap: wrap;
     align-items: center;
 }
+
+.noAlbumSelectedText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:lighter;
+    margin-left:-50px;
+    padding-right:40px;
+}
+.deleteAlbum {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:17px;
+    cursor: pointer;
+}
