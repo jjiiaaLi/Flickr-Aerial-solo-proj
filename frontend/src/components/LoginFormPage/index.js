@@ -23,6 +23,15 @@ function LoginFormPage() {
       }
     );
   };
+  const demoUser = (e) =>{
+    e.preventDefault();
+    return dispatch(sessionActions.login({ credential:'DemoUser', password:'password' })).catch(
+      async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      }
+    );
+  }
 
   return (
     <div className="formBox">
@@ -55,6 +64,7 @@ function LoginFormPage() {
         <button className="subBtn" type="submit">
           Log In
         </button>
+        <button className='subBtn' onClick={demoUser} >Demo User Login</button>
       </form>
     </div>
   );

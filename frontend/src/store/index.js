@@ -5,7 +5,7 @@ import commentReducer from './comment';
 import usersReducer from './users';
 import tagReducer from './tag';
 import thunk from "redux-thunk";
-
+import albumReducer from './album';
 
 const rootReducer = combineReducers({
   session:sessionReducer,
@@ -13,6 +13,7 @@ const rootReducer = combineReducers({
   comment:commentReducer,
   users:usersReducer,
   tags:tagReducer,
+  albums:albumReducer,
 });
 
 let enhancer;

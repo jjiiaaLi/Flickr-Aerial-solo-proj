@@ -16,9 +16,17 @@ const PhotoContainer = () =>{
 
     return (
       <div className="photoContainer">
-        <Link to="/add">
-          <img className="uploadImage" src={`${upload}`} />
-        </Link>
+        <div className="linkDiv">
+          <Link to="/add">
+            <img className="uploadImage" src={`${upload}`} />
+          </Link>
+          <Link to="/createAlbum">
+            <button className="createAlbumBtn">Create Album</button>
+          </Link>
+          <Link to="/viewAlbums">
+            <button className="viewAlbumBtn">View Albums</button>
+          </Link>
+        </div>
         <div className="photoBucket">
           {photos.map((image) => (
             <Link key={image} to={`/photo/${image.id}`}>

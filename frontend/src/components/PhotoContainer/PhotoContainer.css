@@ -4,7 +4,9 @@
     display: flex;
     flex-direction: column;
     position:absolute;
-    background-color: rgb(220, 220, 220);
+    background-image: url(https://media.cntraveller.in/wp-content/uploads/2017/10/Aerial-drone-photo-1366x768.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .image  {
@@ -39,4 +41,36 @@
     margin-left: 972px;
     margin-top: 20px;
     padding-top: 10px;
+}
+
+.createAlbumBtn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:29px;
+    font-weight:lighter;
+    position:relative;
+    margin-left: -450px;
+    margin-top: 30px;
+    border-radius: 7px;
+    border-style:solid;
+    border-width:thin;
+    cursor: pointer;
+}
+
+.viewAlbumBtn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:29px;
+    font-weight:lighter;
+    position:relative;
+    margin-left: 248px;
+    margin-top: 30px;
+    border-radius: 7px;
+    border-style:solid;
+    border-width:thin;
+    cursor: pointer;
+}
+
+.linkDiv {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }

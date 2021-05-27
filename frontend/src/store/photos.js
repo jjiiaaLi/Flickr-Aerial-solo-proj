@@ -64,7 +64,7 @@ export const searchPhoto =(searchContent)=>async dispatch=>{
   const res = await fetch(`/api/photo/search/${searchContent}`)
   if(res.ok){
     const photos=await res.json()
-    console.log(photos)
+    
     dispatch(searchResult(photos))
   }
 }
