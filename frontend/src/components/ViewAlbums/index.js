@@ -5,7 +5,7 @@ import {loadAlbums} from '../../store/album';
 import styles from "./ViewAlbums.css";
 import { getPhotos } from "../../store/photos";
 export default function ViewAlbums() {
-    const [album, setAlbum]= useState('')
+    const [album, setAlbum]= useState([])
     const dispatch=useDispatch();
     //get all the albums from state
     const albums = useSelector(state=>Object.values(state.albums))
@@ -19,25 +19,32 @@ export default function ViewAlbums() {
         dispatch(getPhotos())
         dispatch(loadAlbums())
     },[dispatch])
+    useEffect(()=>{
+      console.log(album)
+    },[album])
 
 
     return (
       <div className="viewAlbumsContainer">
         <div className="albumsList">
-          {albums.map(album=>(
-            <Link onClick={e=>setAlbum(album.photos)} to={`/viewAlbums/${album.id}`} >
-                {album.name}
-            </Link>
+          {albums.map((album) => (
+            <button
+              onClick={(e) => setAlbum(photoIdArr(album.photos))}
+              to={`/viewAlbums/${album.id}`}
+            >
+              {album.name}
+            </button>
           ))}
         </div>
-        <div className='albumShowBox'>
-          {album && photoIdArr(album).map(id=>(
-            photos.map(photo=>{
-              if(photo.id===id){
-                return photo.source
-              }
-            })
-          ))}
+        <div className="albumShowBox">
+          {album &&
+            photoIdArr(album).map((id) =>
+              photos.map((photo) => {
+                if (photo.id === id) {
+                  return photo.source;
+                }
+              })
+            )}
         </div>
       </div>
     );
