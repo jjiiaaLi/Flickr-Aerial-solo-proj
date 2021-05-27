@@ -74,3 +74,16 @@
     flex-direction: row;
     justify-content: flex-start;
 }
+.deletePhotoBtn {
+    border-style: none;
+    background-color: white;
+    font-size:9px;
+    cursor:pointer;
+    margin-top:10%;
+    display:flex;
+    justify-content: flex-start;
+}
+.EachphotoDiv {
+    display:flex;
+    justify-content: flex-start;
+}
