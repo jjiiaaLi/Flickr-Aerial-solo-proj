@@ -1,8 +1,10 @@
 .createAlbumContainer{
-    background-color: rgb(230, 229, 229);
+    background-image: url(https://media.macphun.com/img/uploads/macphun/blog/1262/aerialphotography.jpg?q=75&w=1710&h=906&resize=cover);
     position: absolute;
     width:1945px;
     height:800px;
+    background-size:100%;
+    background-repeat: no-repeat;
 }
 
 .photoSelectionDiv {

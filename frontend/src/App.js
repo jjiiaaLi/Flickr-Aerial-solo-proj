@@ -14,6 +14,7 @@ import SearchResult from './components/SearchResult';
 import CreateAlbum from './components/CreateAlbum';
 import ViewAlbums from './components/ViewAlbums';
 
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -54,6 +55,7 @@ function App() {
           <Route path='/viewAlbums'>
             <ViewAlbums />
           </Route>
+          
           <Route>
             <h1>404 huh?!</h1>
           </Route>

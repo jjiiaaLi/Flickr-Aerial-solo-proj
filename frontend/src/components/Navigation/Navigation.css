@@ -46,5 +46,14 @@
     background-color: black;
     border:0;
     cursor:pointer;
-    font-size: 16px;
+    font-size: 22px;
+}
+
+.logoutBtn {
+    font-family: Arial, Helvetica, sans-serif;
+    color:whitesmoke;
+    background-color: black;
+    border:0;
+    cursor:pointer;
+    font-size: 22px;
 }
