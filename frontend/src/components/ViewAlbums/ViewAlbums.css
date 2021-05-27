@@ -1,0 +1,61 @@
+.eachPhotoInAlbum {
+    max-width:200px;
+    max-height:140px;
+    padding:10px;
+}
+
+.albumShowBox {
+    background-color: white;
+    position:relative;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding:30px;
+    border-style:solid;
+    border-width: thin;
+    border-radius: 12px;
+    margin-left:40px;
+    width:470px;
+    height:500px;
+    margin-top: 150px;
+    overflow: auto;
+    
+}
+
+.albumsList{
+    background-color: white;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    padding:30px;
+    border-style:solid;
+    border-width: thin;
+    border-radius: 12px;
+    width:150px;
+    height:500px;
+    margin-left: 550px;
+    margin-top: 150px;
+    overflow: auto;
+}
+
+.viewAlbumsContainer {
+    position:absolute;
+    display:flex;
+    width:1945px;
+    height:800px;
+    background-image: url(https://miro.medium.com/max/4000/1*5j3LYgFdj-r5YzbZFMo7pw.png);
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+.albumBtn {
+    margin-bottom:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:22px;
+}
+.eachPhotoContainer {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}

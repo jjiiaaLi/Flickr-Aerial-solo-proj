@@ -5,23 +5,30 @@ import {loadAlbums} from '../../store/album';
 import styles from "./ViewAlbums.css";
 import { getPhotos } from "../../store/photos";
 export default function ViewAlbums() {
-    const [album, setAlbum]= useState([])
+    const [album, setAlbum]= useState('')
     const dispatch=useDispatch();
     //get all the albums from state
     const albums = useSelector(state=>Object.values(state.albums))
     const photos = useSelector(state=>Object.values(state.photo))
-    
-    const photoIdArr=(string)=>{
-      return string.split(',')
+    let albumArr=[];
+
+    if(album){
+      albumArr=album.split(',')
     }
+    
+    const albumPhoto = (photoId, photos) => {
+      const result = photos.filter(photo=>{
+        if(photo.id===Number(photoId)){
+          return photo.source
+        }
+      })
+      return result[0].source
+    };
 
     useEffect(()=>{
         dispatch(getPhotos())
         dispatch(loadAlbums())
     },[dispatch])
-    useEffect(()=>{
-      console.log(album)
-    },[album])
 
 
     return (
@@ -29,7 +36,9 @@ export default function ViewAlbums() {
         <div className="albumsList">
           {albums.map((album) => (
             <button
-              onClick={(e) => setAlbum(photoIdArr(album.photos))}
+              className='albumBtn'
+              value={album.photos}
+              onClick={(e) => setAlbum(e.target.value)}
               to={`/viewAlbums/${album.id}`}
             >
               {album.name}
@@ -37,14 +46,15 @@ export default function ViewAlbums() {
           ))}
         </div>
         <div className="albumShowBox">
-          {album &&
-            photoIdArr(album).map((id) =>
-              photos.map((photo) => {
-                if (photo.id === id) {
-                  return photo.source;
-                }
-              })
-            )}
+          <div className='eachPhotoContainer'>
+            {albumArr && albumArr.map(photoId=>{
+              return (
+              <Link to={`/photo/${photoId}`}>
+                <img className='eachPhotoInAlbum' src={albumPhoto(photoId,photos)} />
+              </Link>)
+            })
+            }
+          </div>
         </div>
       </div>
     );
