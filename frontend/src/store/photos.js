@@ -1,9 +1,11 @@
 import { csrfFetch } from "./csrf";
 
+
 const LOAD = "photo/LOAD";
 const GET_ONE = "photo/LOAD_ONE";
 const ADD = "photo/ADD";
 const SEARCH = 'photo/SEARCH';
+const REMOVE= 'photo/REMOVE';
 
 const load = (photos) => ({
   type: LOAD,
@@ -23,6 +25,11 @@ const add = (photo) => ({
 const searchResult = (photos)=>({
   type:SEARCH,
   photos:photos,
+})
+
+const remove=(photoId)=>({
+  type:REMOVE,
+  photoId:photoId,
 })
 
 export const getSinglePhoto = (id) => async (dispatch) => {
@@ -69,6 +76,19 @@ export const searchPhoto =(searchContent)=>async dispatch=>{
   }
 }
 
+export const removePhoto=(photoId)=>async dispatch=>{
+  const res=await csrfFetch(`/api/photo/${photoId}`,{
+    method:'delete'
+  }); 
+  
+  
+  if(res.ok){
+    console.log('HELLLLLLLOOOOO!!!!!')
+    dispatch(remove(photoId))
+    
+  }
+}
+
 const initialState = {};
 
 export default function photoReducer(state = initialState, action) {
@@ -94,6 +114,10 @@ export default function photoReducer(state = initialState, action) {
       action.photos.forEach((photo) => {
         newState[photo.id] = photo;
       });
+      return newState;
+    case REMOVE:
+      newState={...state};
+      delete newState[action.photoId];
       return newState;
     default:
       return state;

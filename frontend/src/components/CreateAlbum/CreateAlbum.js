@@ -27,7 +27,7 @@ export default function CreateAlbum() {
         const newAlbum={
             name,userId,photos
         }
-        console.log(newAlbum)
+        
         const createdAlbum= await dispatch(createAlbum(newAlbum));
         history.replace('/')
     }

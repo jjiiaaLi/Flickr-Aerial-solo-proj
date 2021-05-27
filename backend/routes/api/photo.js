@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
-const {Photo} = require ('../../db/models');
+const {Photo,Comment} = require ('../../db/models');
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op
 
@@ -44,6 +44,17 @@ router.get('/search/:searchContent', asyncHandler(async(req,res)=>{
         }
     })
     res.json(photos)
+}))
+
+router.delete('/:photoId',asyncHandler(async(req,res)=>{
+    const photoId = await req.params.photoId;
+    await Comment.destroy({
+        where:{photoId:photoId}
+    })
+    await Photo.destroy({
+        where:{id:photoId}
+    })
+    res.json(photoId)
 }))
 
 module.exports = router;

@@ -1,17 +1,19 @@
 import {Link} from 'react-router-dom';
 import {useEffect,useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { getPhotos } from '../../store/photos';
+import { getPhotos,removePhoto } from '../../store/photos';
 import styles from './PhotoContainer.css';
 import upload from './image/upload.png';
 
 const PhotoContainer = () =>{
+    const [removePhotoId, setRemovePhotoId] =useState('')
     const dispatch = useDispatch();
     const photos = useSelector((state)=>Object.values(state.photo));
     
     useEffect(()=>{
         dispatch(getPhotos())
     },[dispatch])
+    
     
 
     return (
@@ -29,11 +31,18 @@ const PhotoContainer = () =>{
         </div>
         <div className="photoBucket">
           {photos.map((image) => (
-            <Link key={image} to={`/photo/${image.id}`}>
-              <img className="image" src={image.source} />
-            </Link>
+            <div className='EachphotoDiv'>
+              <Link key={image} to={`/photo/${image.id}`}>
+                <img className="image" src={image.source} />
+              </Link>
+              <button value={image.id} onClick={e=>{
+                dispatch(removePhoto(image.id));
+              }
+                } className='deletePhotoBtn'>x</button>
+            </div>
           ))}
         </div>
+        
       </div>
     );
 };
