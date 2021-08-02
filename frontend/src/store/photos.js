@@ -80,10 +80,9 @@ export const removePhoto=(photoId)=>async dispatch=>{
   const res=await csrfFetch(`/api/photo/${photoId}`,{
     method:'delete'
   }); 
-  
-  
+
   if(res.ok){
-    console.log('HELLLLLLLOOOOO!!!!!')
+    
     dispatch(remove(photoId))
     
   }

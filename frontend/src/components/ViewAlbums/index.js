@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {loadAlbums, removeAlbum} from '../../store/album';
 import styles from "./ViewAlbums.css";
 import { getPhotos } from "../../store/photos";
+
+
 export default function ViewAlbums() {
     const [album, setAlbum]= useState('');
     const [albumId, setAlbumId] = useState(0);
     const dispatch=useDispatch();
+    const history=useHistory();
     //get all the albums from state
     const albums = useSelector(state=>Object.values(state.albums))
     const photos = useSelector(state=>Object.values(state.photo))
@@ -38,6 +41,9 @@ export default function ViewAlbums() {
 
     return (
       <div className="viewAlbumsContainer">
+        <Link to='/createAlbum'>
+          <button className='createBtnfromview' >Create New Album</button>
+        </Link>
         <div className="albumsList">
           {albums.map((album) => (
             <button

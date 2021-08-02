@@ -29,7 +29,7 @@ export default function CreateAlbum() {
         }
         
         const createdAlbum= await dispatch(createAlbum(newAlbum));
-        history.replace('/')
+        history.replace('/viewAlbums')
     }
     
     

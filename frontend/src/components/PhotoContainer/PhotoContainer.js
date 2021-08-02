@@ -21,6 +21,7 @@ const PhotoContainer = () =>{
         <div className="linkDiv">
           <Link to="/add">
             <img className="uploadImage" src={`${upload}`} />
+            <p className='uploadImgPtag'>Upload Image</p>
           </Link>
           <Link to="/createAlbum">
             <button className="createAlbumBtn">Create Album</button>

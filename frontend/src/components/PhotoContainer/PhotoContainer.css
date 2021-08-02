@@ -87,3 +87,10 @@
     display:flex;
     justify-content: flex-start;
 }
+
+.uploadImgPtag{
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    font-size:17px;
+    margin-left: 937px;
+}

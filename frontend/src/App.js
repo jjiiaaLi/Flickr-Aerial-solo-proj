@@ -55,9 +55,8 @@ function App() {
           <Route path='/viewAlbums'>
             <ViewAlbums />
           </Route>
-          
           <Route>
-            <h1>404 huh?!</h1>
+            <h1>404 </h1>
           </Route>
         </Switch>
       )}
