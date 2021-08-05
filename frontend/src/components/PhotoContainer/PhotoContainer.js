@@ -13,8 +13,7 @@ const PhotoContainer = () =>{
     useEffect(()=>{
         dispatch(getPhotos())
     },[dispatch])
-    
-    
+
 
     return (
       <div className="photoContainer">

@@ -41,7 +41,7 @@ function Navigation({ isLoaded }) {
         <Link className="links" exact to="/">
           Flickr Clone &nbsp;
         </Link>
-        <span className='search'>
+        {/* <span className='search'>
           <input
             type="text"
             name="searchContent"
@@ -56,7 +56,7 @@ function Navigation({ isLoaded }) {
             disabled={searchContent === ""}
             onClick={handleClick}
           ><img className='magGlass' src={`${search}`} /></button>
-        </span>
+        </span> */}
 
         {isLoaded && sessionLinks}
       </li>
